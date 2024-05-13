@@ -1,0 +1,61 @@
+/*
+* Curso de Engenharia de Software - UniEVANGÉLICA 
+* Disciplina de Programação Web 
+* Dev: [Gabriel G. Mesquita] 
+* DATA:12/05
+*/ 
+
+GET /api/tasks 
+- Descrição: Recupera a lista de todas as tarefas.
+- Parâmetros de consulta opcionais:
+  - status: Filtra as tarefas pelo status (por exemplo, "completed", "pending").
+  - priority: Filtra as tarefas pela prioridade (por exemplo, "high", "medium", "low").
+  - sort: Ordena as tarefas por um campo específico (por exemplo, "due_date", "priority").
+- Resposta esperada: Lista de objetos JSON representando as tarefas.
+
+POST /api/tasks 
+- Descrição: Cria uma nova tarefa.
+- Corpo da solicitação: Objeto JSON representando as informações da nova tarefa.
+- Resposta esperada: Objeto JSON representando a tarefa recém-criada, incluindo seu ID.
+
+GET /api/tasks/{task_id} 
+- Descrição: Recupera informações de uma tarefa específica por ID.
+- Parâmetros de URL: task_id (ID da tarefa)
+- Resposta esperada: Objeto JSON representando as informações da tarefa específica.
+
+PUT /api/tasks/{task_id} 
+- Descrição: Atualiza as informações de uma tarefa específica por ID.
+- Parâmetros de URL: task_id (ID da tarefa)
+- Corpo da solicitação: Objeto JSON contendo as novas informações da tarefa.
+- Resposta esperada: Objeto JSON representando as informações atualizadas da tarefa.
+
+DELETE /api/tasks/{task_id} 
+- Descrição: Exclui uma tarefa específica por ID.
+- Parâmetros de URL: task_id (ID da tarefa)
+- Resposta esperada: Código de status 204 (No Content) se a exclusão for bem-sucedida.
+
+POST /api/auth/login
+- Descrição: Autentica um usuário e gera um token de acesso.
+- Corpo da solicitação: Objeto JSON contendo credenciais de usuário (por exemplo, email e senha).
+- Resposta esperada: Objeto JSON contendo um token de acesso.
+
+GET /api/users/{user_id}/tasks
+- Descrição: Recupera a lista de tarefas de um usuário específico.
+- Parâmetros de URL: user_id (ID do usuário)
+- Resposta esperada: Lista de objetos JSON representando as tarefas do usuário.
+
+POST /api/users
+- Descrição: Cria um novo usuário.
+- Corpo da solicitação: Objeto JSON representando as informações do novo usuário.
+- Resposta esperada: Objeto JSON representando o usuário recém-criado, incluindo seu ID.
+
+PUT /api/users/{user_id}
+- Descrição: Atualiza as informações de um usuário específico por ID.
+- Parâmetros de URL: user_id (ID do usuário)
+- Corpo da solicitação: Objeto JSON contendo as novas informações do usuário.
+- Resposta esperada: Objeto JSON representando as informações atualizadas do usuário.
+
+DELETE /api/users/{user_id}
+- Descrição: Exclui um usuário específico por ID.
+- Parâmetros de URL: user_id (ID do usuário)
+- Resposta esperada: Código de status 204 (No Content) se a exclusão for bem-sucedida.
